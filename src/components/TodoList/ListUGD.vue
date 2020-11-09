@@ -10,7 +10,18 @@
                     label="Search"
                     single-line
                     hide-details></v-text-field>
+                
                 <v-spacer></v-spacer>
+
+                <v-select
+                    v-model="search"
+                    :items="['', 'Penting', 'Biasa', 'Tidak penting']"
+                    label="All Priority"
+                    outlined
+                    single-line></v-select>
+                    
+                <v-spacer></v-spacer>
+                
                 <v-btn color="success" dark @click="dialog = true">
                     Tambah
                 </v-btn>
@@ -176,8 +187,8 @@ export default {
             this.$nextTick(() => {
                 this.formTodoEdit = Object.assign({}, this.formTodo)
                 this.editedIndex = -1
-        })
-      },
+            })
+        },
     },
 };
 </script>
